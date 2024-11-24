@@ -1,0 +1,74 @@
+﻿@model RestaurantReservationAPI.Models.Reservation
+
+<br />
+<br />
+<div class="form-box" style="max-width: 600px; margin: auto; background-color: var(--gold); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 class="text-center" style="font-size: 1.8rem; color: var(--black);">Edit Reservation</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="ReservationID" /> <!-- Hidden field to store ReservationID -->
+
+        <div class="form-group mb-3">
+            <label asp-for="TableNumber" class="form-label"></label>
+            <input asp-for="TableNumber" class="form-control" required />
+            <span asp-validation-for="TableNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Date" class="form-label"></label>
+            <input asp-for="Date" class="form-control" type="datetime-local"
+                   value="@Model.Date.ToString("yyyy-MM-ddTHH:mm")" required />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+
+        <div class="form-group text-center mt-3">
+            <button type="submit" class="btn btn-dark" style="background-color: var(--black); color: var(--gold);">Save</button>
+            <a asp-action="Index" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* Theme Colors */
+    :root {
+        --gold: #d4af37; /* Gold color for background */
+        --black: #000000; /* Black color for text */
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-dark {
+        background-color: var(--black);
+        border-color: var(--black);
+        color: var(--gold);
+    }
+
+        .btn-dark:hover {
+            background-color: #333333;
+            border-color: #333333;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    .form-box {
+        padding: 20px;
+        background-color: var(--gold);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

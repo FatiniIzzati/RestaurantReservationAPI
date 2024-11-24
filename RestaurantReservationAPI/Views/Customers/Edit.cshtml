@@ -1,0 +1,77 @@
+﻿@model RestaurantReservationAPI.Models.Customer
+
+<br /><br /><div class="form-box" style="max-width: 600px; margin: auto; background-color: var(--gold); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 class="text-center" style="font-size: 1.8rem; color: var(--black);">Edit Customer Details</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="CustomerID" /> <!-- Hidden field to store CustomerID -->
+
+        <div class="form-group mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="PhoneNumber" class="form-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <button type="submit" class="btn btn-dark" style="background-color: var(--black); color: var(--gold);">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* Theme Colors */
+    :root {
+        --gold: #d4af37; /* Gold color for background */
+        --black: #000000; /* Black color for text */
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-dark {
+        background-color: var(--black);
+        border-color: var(--black);
+        color: var(--gold);
+    }
+
+        .btn-dark:hover {
+            background-color: #333333;
+            border-color: #333333;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+    .form-box {
+        padding: 20px;
+        background-color: var(--gold);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

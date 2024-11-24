@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RestaurantReservationAPI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RestaurantReservationAPI.styles.css" asp-append-version="true" />
+    <style>
+        /* Theme Colors */
+        :root {
+            --beige: #f5f5dc; /* Beige background for body */
+            --gold: #d4af37; /* Gold background for container */
+            --black: #000000; /* Black for text */
+        }
+
+        /* General Body Styling */
+        body {
+            background-color: var(--beige);
+            color: var(--black); /* Default text color to black */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--black);
+            color: var(--gold); /* Set navbar text to gold */
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold) !important; /* Navbar brand text in gold */
+        }
+
+        .nav-link {
+            color: var(--gold) !important;
+            transition: color 0.3s ease;
+        }
+
+            .nav-link:hover {
+                color: #e8c547 !important; /* Hover effect for gold */
+            }
+
+        /* Footer Styling */
+        .footer {
+            background-color: var(--black);
+            color: var(--gold); /* Footer text in gold */
+            padding: 15px 0;
+            border-top: 2px solid var(--gold);
+        }
+
+            .footer a {
+                color: var(--gold); /* Footer links set to black */
+                text-decoration: none;
+            }
+
+                .footer a:hover {
+                    color: #333333; /* Darker hover color */
+                    text-decoration: underline;
+                }
+
+        
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--black);
+            border-color: var(--black);
+            color: var(--gold);
+        }
+
+            .btn-primary:hover {
+                background-color: #333333;
+                border-color: #333333;
+                color: var(--gold);
+            }
+
+        /* Inputs */
+        input.form-control {
+            background-color: var(--beige);
+            color: var(--black);
+            border: 1px solid var(--black);
+        }
+
+            input.form-control:focus {
+                background-color: var(--beige);
+                color: var(--black);
+                border-color: var(--black);
+                box-shadow: 0 0 5px var(--black);
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Fizz Restaurant</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Customers" asp-action="Index">Customers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Reservations" asp-action="Index">Reservations</a>
+                        <li class="nav-item">
+                            
+                        </li>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            &copy; 2024 - Fizz Restaurant - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
